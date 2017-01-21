@@ -2,16 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\TweetHistory\TweetHistory;
-
 class DashboardController extends Controller
 {
     public function index()
     {
         $pusherKey = config('broadcasting.connections.pusher.key');
 
-        $initialTweets = (new TweetHistory())->getTweets();
+        $initialState = (new InitialStateStorage)->getInitialStateForAllComponents();
 
-        return view('dashboard')->with(compact('pusherKey', 'initialTweets'));
+        return view('dashboard')->with(compact('pusherKey', 'initialState'));
     }
 }

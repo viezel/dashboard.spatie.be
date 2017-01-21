@@ -42,6 +42,7 @@
     import moment from 'moment';
     import {diffInSeconds, addClassModifiers} from '../helpers';
     import { map } from 'lodash';
+    import initialState from '../mixins/initialState';
 
     export default {
 
@@ -52,7 +53,7 @@
 
         mixins: [echo],
 
-        props: ['grid', 'initialTweets'],
+        props: ['grid'],
 
         data() {
             return {
@@ -99,10 +100,8 @@
                 this.displayingTopTweetSince = new moment();
             },
 
-            getSaveStateConfig() {
-                return {
-                    cacheKey: `twitter`,
-                };
+            getComponentName() {
+                return 'twitter';
             },
         },
     };

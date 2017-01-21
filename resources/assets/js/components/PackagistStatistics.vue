@@ -28,7 +28,6 @@
 import { formatNumber } from '../helpers';
 import echo from '../mixins/echo';
 import Grid from './Grid';
-import saveState from 'vue-save-state';
 
 export default {
 
@@ -36,9 +35,9 @@ export default {
         Grid,
     },
 
-    mixins: [echo, saveState],
+    mixins: [echo],
 
-    props: ['grid'],
+    props: ['grid', 'initialState'],
 
     data() {
         return {
@@ -48,6 +47,13 @@ export default {
             total: 0,
         };
     },
+
+    created() {
+        this.stars = this.initialState.stars;
+        this.daily = this.initialState.daily;
+        this.monthly = this.initialState.monthly;
+        this.total = this.initialState.total;
+    }
 
     methods: {
         formatNumber,
@@ -60,12 +66,6 @@ export default {
                     this.monthly = response.monthly;
                     this.total = response.total;
                 },
-            };
-        },
-
-        getSaveStateConfig() {
-            return {
-                cacheKey: 'packagist-statistics',
             };
         },
     },

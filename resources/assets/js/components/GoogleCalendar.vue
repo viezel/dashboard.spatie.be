@@ -16,7 +16,7 @@
 import { relativeDate } from '../helpers';
 import echo from '../mixins/echo';
 import Grid from './Grid';
-import saveState from 'vue-save-state';
+import initialState from '../mixins/initialState';
 
 export default {
 
@@ -24,15 +24,19 @@ export default {
         Grid,
     },
 
-    mixins: [echo, saveState],
+    mixins: [echo],
 
-    props: ['grid'],
+    props: ['grid', 'initialState'],
 
     data() {
         return {
             events: [],
         };
     },
+
+    created() {
+        this.events = this.initialState;
+    }
 
     methods: {
         relativeDate,
@@ -42,12 +46,6 @@ export default {
                 'GoogleCalendar.EventsFetched': response => {
                     this.events = response.events;
                 },
-            };
-        },
-
-        getSaveStateConfig() {
-            return {
-                cacheKey: 'google-calendar',
             };
         },
     },

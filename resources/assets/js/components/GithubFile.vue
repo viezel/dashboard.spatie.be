@@ -10,7 +10,6 @@
 <script>
 import echo from '../mixins/echo';
 import Grid from './Grid';
-import saveState from 'vue-save-state';
 
 export default {
 
@@ -18,15 +17,19 @@ export default {
         Grid,
     },
 
-    mixins: [echo, saveState],
+    mixins: [echo],
 
-    props: ['fileName', 'grid'],
+    props: ['fileName', 'grid', 'initialState'],
 
     data() {
         return {
             contents: '',
         };
     },
+
+    created() {
+        this.contents = this.initialState[this.fileName];
+    }
 
     methods: {
         getEventHandlers() {
@@ -37,10 +40,8 @@ export default {
             };
         },
 
-        getSaveStateConfig() {
-            return {
-                cacheKey: `github-file-${this.fileName}`,
-            };
+        getComponentName() {
+            return 'githubFile';
         },
     },
 };

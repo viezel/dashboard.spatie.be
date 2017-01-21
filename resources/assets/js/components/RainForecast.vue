@@ -17,11 +17,11 @@
 </template>
 
 <script>
+import { addClassModifiers } from '../helpers';
 import { filter, map, sumBy } from 'lodash';
 import echo from '../mixins/echo';
 import Graph from './Graph';
 import Grid from './Grid';
-import { addClassModifiers } from '../helpers';
 
 export default {
 
@@ -32,7 +32,17 @@ export default {
 
     mixins: [echo],
 
-    props: ['grid'],
+    props: ['grid', 'initialState'],
+
+    data() {
+        return {
+            forecast: [],
+        };
+    },
+
+    created() {
+        this.forecast = this.initialState;
+    }
 
     computed: {
         status() {
@@ -76,11 +86,7 @@ export default {
         },
     },
 
-    data() {
-        return {
-            forecast: [],
-        };
-    },
+
 
     methods: {
         addClassModifiers,
@@ -91,6 +97,10 @@ export default {
                     this.forecast = response.forecast;
                 },
             };
+        },
+
+        getComponentName() {
+            return 'rainForecast';
         },
     },
 };

@@ -23,10 +23,9 @@
 </template>
 
 <script>
+import { addClassModifiers } from '../helpers';
 import echo from '../mixins/echo';
 import Grid from './Grid';
-import { addClassModifiers } from '../helpers';
-import saveState from 'vue-save-state';
 
 export default {
 
@@ -34,9 +33,9 @@ export default {
         Grid,
     },
 
-    mixins: [echo, saveState],
+    mixins: [echo],
 
-    props: ['grid'],
+    props: ['grid', 'initialState'],
 
     data() {
         return {
@@ -56,6 +55,13 @@ export default {
         },
     },
 
+    created() {
+        this.artist = this.initialState.artist
+        this.trackName = this.initialState.trackName
+        this.artwork = this.initialState.artwork
+        this.userName = this.initialState.userName
+    }
+
     methods: {
         addClassModifiers,
 
@@ -70,12 +76,6 @@ export default {
                     this.artwork = response.trackInfo.artwork;
                     this.userName = response.userName;
                 },
-            };
-        },
-
-        getSaveStateConfig() {
-            return {
-                cacheKey: 'last-fm',
             };
         },
     },
