@@ -21,6 +21,7 @@ class Kernel extends ConsoleKernel
         \App\Components\RainForecast\FetchRainForecast::class,
         \App\Components\Twitter\ListenForMentions::class,
         \App\Components\Relic\FetchNewRelicServerList::class,
+        \App\Components\GitLab\FetchGitLabBuilds::class,
         SendFakeTweet::class
     ];
 
@@ -38,5 +39,6 @@ class Kernel extends ConsoleKernel
         $schedule->command(\App\Components\Packagist\FetchTotals::class)->hourly();
         $schedule->command(\App\Components\RainForecast\FetchRainForecast::class)->everyMinute();
         $schedule->command(\App\Components\Relic\FetchNewRelicServerList::class)->everyMinute();
+        $schedule->command(\App\Components\GitLab\FetchGitLabBuilds::class)->everyTenMinutes();
     }
 }

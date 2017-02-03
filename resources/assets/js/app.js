@@ -12,6 +12,7 @@ import PackagistStatistics from './components/PackagistStatistics';
 import RainForecast from './components/RainForecast';
 import Twitter from './components/Twitter';
 import NewRelicServer from './components/NewRelicServer';
+import GitLabBuilds from './components/GitLabBuilds';
 
 new Vue({
 
@@ -27,6 +28,7 @@ new Vue({
         RainForecast,
         Twitter,
         NewRelicServer,
+        GitLabBuilds,
     },
 
     created() {

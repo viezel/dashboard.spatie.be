@@ -1,0 +1,42 @@
+.gitlab__title {
+    color: color($gray, light);
+    opacity: 1;
+    font-size: setting($font-size, m);
+    text-transform: uppercase;
+}
+
+.gitlab__builds {
+    color: $white;
+    font-size: setting($font-size, s);
+}
+
+.gitlab__build {
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+.gitlab__build__title {
+    @include font-sans-bold;
+}
+
+.gitlab__build__data {
+    color: color($gray, light);
+    font-size: setting($font-size, xs);
+}
+
+.gitlab__build__status {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+
+    &.success {
+        background-color: darkgreen;
+    }
+    &.failed {
+        background-color: color($red);
+    }
+    &.progress {
+        background-color: color($gray);
+    }
+}
