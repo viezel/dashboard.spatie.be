@@ -49,10 +49,10 @@ class FetchNewRelicServerList extends Command
                 return [
                     'name' => $server->name,
                     'health' => $server->health_status,
-                    'cpu' => $server->summary->cpu,
-                    'memory' => $server->summary->memory,
-                    'disk_io' => $server->summary->disk_io,
-                    'fullest_disk' => $server->summary->fullest_disk
+                    'cpu' => round((float)$server->summary->cpu),
+                    'memory' => round((float)$server->summary->memory),
+                    'disk_io' => round((float)$server->summary->disk_io),
+                    'fullest_disk' => round((float)$server->summary->fullest_disk)
                 ];
             })
             ->toArray();

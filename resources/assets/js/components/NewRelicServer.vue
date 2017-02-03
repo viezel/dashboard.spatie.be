@@ -5,8 +5,8 @@
            <ul class="new-relic__servers">
                <li v-for="server in servers"  class="new-relic__server">
                    <h4 class="new-relic__server__title"><span class="new-relic__server__status" v-bind:class="[server.health]"></span> {{ server.name }}</h4>
-                   <div class="new-relic__server__data"><small>CPU</small> {{ server.cpu }}% | Mem: {{ server.memory }}%</div>
-                   <div class="new-relic__server__data"><small>IO</small> {{ server.disk_io }}% | Disk: {{ server.fullest_disk }}%</div>
+                   <div class="new-relic__server__data"><small>CPU:</small> {{ server.cpu }}% | <small>Mem:</small> {{ server.memory }}%</div>
+                   <div class="new-relic__server__data"><small>IO:</small> {{ server.disk_io }}% | <small>Disk:</small> {{ server.fullest_disk }}%</div>
                </li>
            </ul>
        </section>
