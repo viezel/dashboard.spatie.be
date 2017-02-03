@@ -13,6 +13,7 @@ import RainForecast from './components/RainForecast';
 import Twitter from './components/Twitter';
 import NewRelicServer from './components/NewRelicServer';
 import GitLabBuilds from './components/GitLabBuilds';
+import WunderlistTasks from './components/WunderlistTasks';
 
 new Vue({
 
@@ -29,6 +30,7 @@ new Vue({
         Twitter,
         NewRelicServer,
         GitLabBuilds,
+        WunderlistTasks,
     },
 
     created() {

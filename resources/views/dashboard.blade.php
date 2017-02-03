@@ -15,6 +15,7 @@
         <last-fm grid="e3"></last-fm>
         <current-time grid="e1" dateformat="ddd DD/MM"></current-time>
         <packagist-statistics grid="e2"></packagist-statistics>
+        <wunderlist-tasks grid="f1:f2"></wunderlist-tasks>
 
     </div>
 

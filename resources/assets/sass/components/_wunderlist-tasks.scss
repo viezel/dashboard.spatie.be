@@ -1,0 +1,22 @@
+.wunderlist__title {
+    color: color($gray, light);
+    opacity: 1;
+    font-size: setting($font-size, m);
+    text-transform: uppercase;
+}
+
+.wunderlist_tasks {
+    color: $white;
+    font-size: setting($font-size, s);
+}
+
+li.wunderlist_task {
+    padding-top: 0.3vh;
+    padding-bottom: 0.3vh;
+    border-bottom:none;
+}
+
+.wunderlist__task_title {
+    @include font-sans-bold;
+    color: color($gray, light);
+}
