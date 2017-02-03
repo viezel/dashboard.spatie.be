@@ -17,6 +17,7 @@
         <packagist-statistics grid="e2"></packagist-statistics>
         <wunderlist-tasks grid="f1:f2"></wunderlist-tasks>
 
+        <bugsnag-errors grid="a4:c4"></bugsnag-errors>
     </div>
 
 @endsection

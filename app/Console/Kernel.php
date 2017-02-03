@@ -23,6 +23,7 @@ class Kernel extends ConsoleKernel
         \App\Components\Relic\FetchNewRelicServerList::class,
         \App\Components\GitLab\FetchGitLabBuilds::class,
         \App\Components\Wunderlist\FetchWunderlistTasks::class,
+        \App\Components\Bugsnag\FetchBugsnagErrors::class,
         //SendFakeTweet::class
     ];
 
@@ -42,5 +43,6 @@ class Kernel extends ConsoleKernel
         $schedule->command(\App\Components\Relic\FetchNewRelicServerList::class)->everyMinute();
         $schedule->command(\App\Components\GitLab\FetchGitLabBuilds::class)->everyTenMinutes();
         $schedule->command(\App\Components\Wunderlist\FetchWunderlistTasks::class)->everyFiveMinutes();
+        $schedule->command(\App\Components\Bugsnag\FetchBugsnagErrors::class)->everyFiveMinutes();
     }
 }

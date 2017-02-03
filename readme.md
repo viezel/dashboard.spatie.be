@@ -7,6 +7,7 @@ This repo contains a forked version of [Spatie Dashboard package](https://github
 * New Relic Server list
 * GitLab Builds
 * Wunderlist tasks
+* Bugsnag errors
 
 
 ### Component: New Relic Server list
@@ -56,6 +57,23 @@ Add the following to your `.env` to install this component
     WUNDERLIST_CLIENT_ID=
     WUNDERLIST_LIST_ID=
 
+
+### Component: Bugsnag
+
+This component will show opened errors (group of exceptions) from Bugsnag.
+
+Start by getting your Data access token from the Bugsnag settings. Then find your account
+
+    curl --request GET --url https://api.bugsnag.com/accounts/?auth_token=YOUR-TOKEN
+
+Next find your project id
+
+    curl --request GET --url https://api.bugsnag.com/accounts/YOUR-ACCOUNT-ID/projects?auth_token=YOUR-TOKEN
+
+Add token and id to your `.env`
+
+    BUGSNAG_PROJECT_ID=
+    BUGSNAG_API_TOKEN=
 
 ## License
 

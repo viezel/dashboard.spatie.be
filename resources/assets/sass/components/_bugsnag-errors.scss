@@ -1,0 +1,27 @@
+.bugsnag__title {
+    color: color($gray, light);
+    opacity: 1;
+    font-size: setting($font-size, m);
+    text-transform: uppercase;
+}
+
+.bugsnag_errors {
+    color: $white;
+    font-size: setting($font-size, s);
+}
+
+li.bugsnag_error {
+    padding-top: 0.3vh;
+    padding-bottom: 0.3vh;
+}
+
+.bugsnag__error_last_context {
+    @include font-sans-bold;
+    color: $white;
+}
+
+.bugsnag__error_class, .bugsnag__error_misc {
+    @include font-sans;
+    color: color($gray, light);
+    font-size: setting($font-size, s);
+}

@@ -14,6 +14,7 @@ import Twitter from './components/Twitter';
 import NewRelicServer from './components/NewRelicServer';
 import GitLabBuilds from './components/GitLabBuilds';
 import WunderlistTasks from './components/WunderlistTasks';
+import BugsnagErrors from './components/BugsnagErrors';
 
 new Vue({
 
@@ -31,6 +32,7 @@ new Vue({
         NewRelicServer,
         GitLabBuilds,
         WunderlistTasks,
+        BugsnagErrors,
     },
 
     created() {
