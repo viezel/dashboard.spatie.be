@@ -6,6 +6,7 @@ This repo contains a forked version of [Spatie Dashboard package](https://github
 
 * New Relic Server list
 * GitLab Builds
+* Wunderlist tasks
 
 
 ### Component: New Relic Server list
@@ -27,7 +28,7 @@ Each server will showcase like this:
 GitLab has builtin CI which in run in `Pipelines`. 
 This component shows the build status of a given project. 
 
-By design it  shows the latest build from the `develop` branch. 
+By design it shows the latest build from the `develop` branch. 
 You can change this in the `FetchGitLabBuilds` command.
 
 Add the following to your `.env` to install this component 
@@ -37,8 +38,26 @@ Add the following to your `.env` to install this component
     GITLAB_PROJECTS=10,11,12
     GITLAB_PROJECT_NAMES="Epic website,New App,To-Do"
 
+### Component: Wunderlist tasks
+
+Jump into https://developer.wunderlist.com and create a new app and generate a access token. 
+
+If you dont know your list_id then hit Wunderlist List API to find it, like so:
+
+    curl --request GET \
+      --url https://a.wunderlist.com/api/v1/lists \
+      --header 'accept: application/json' \
+      --header 'x-access-token: 1234' \
+      --header 'x-client-id: abc' 
+
+Add the following to your `.env` to install this component 
+
+    WUNDERLIST_ACCESS_TOKEN=
+    WUNDERLIST_CLIENT_ID=
+    WUNDERLIST_LIST_ID=
 
 
 ## License
 
 This project and the Laravel framework are open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+
