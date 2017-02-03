@@ -3,7 +3,6 @@
 namespace App\Components\GitLab;
 
 use App\Events\GitLab\BuildFetched;
-use App\Events\Relic\ServerListFetched;
 use Illuminate\Console\Command;
 use GuzzleHttp\Client;
 

@@ -5,8 +5,6 @@ namespace App\Components\Relic;
 use App\Events\Relic\ServerListFetched;
 use Illuminate\Console\Command;
 use GuzzleHttp\Client;
-use MongoDB\Driver\Server;
-
 
 class FetchNewRelicServerList extends Command
 {
