@@ -2,12 +2,21 @@
 
 This repo contains a forked version of [Spatie Dashboard package](https://github.com/spatie/dashboard.spatie.be)  
 
+## Two Dashboards
+
+This shows how to use two dashboards at the same time. 
+
+* yoururl.com
+* yoururl.com/sales
+
 ## New Components
 
 * New Relic Server list
+* New Relic Throughput graph
 * GitLab Builds
-* Wunderlist tasks
-* Bugsnag errors
+* Wunderlist Tasks
+* Bugsnag Errors
+* Zoho CRM events and potentials
 
 
 ### Component: New Relic Server list
@@ -23,6 +32,11 @@ Each server will showcase like this:
     Server Hostname
     CPU: 1% | Mem: 6%
     IO: 0% | Disk: 34%
+    
+### Component: New Relic Throughput graph
+
+Fill out the `NEW_RELIC_APP_ID` in the `.env` file.
+Add `<new-relic-rpm grid="c4:d4"></new-relic-rpm>` to your blade view.
 
 ### Component: GitLab Builds
 
@@ -39,7 +53,7 @@ Add the following to your `.env` to install this component
     GITLAB_PROJECTS=10,11,12
     GITLAB_PROJECT_NAMES="Epic website,New App,To-Do"
 
-### Component: Wunderlist tasks
+### Component: Wunderlist Tasks
 
 Jump into https://developer.wunderlist.com and create a new app and generate a access token. 
 
@@ -58,7 +72,7 @@ Add the following to your `.env` to install this component
     WUNDERLIST_LIST_ID=
 
 
-### Component: Bugsnag
+### Component: Bugsnag Errors
 
 This component will show opened errors (group of exceptions) from Bugsnag.
 
@@ -74,6 +88,19 @@ Add token and id to your `.env`
 
     BUGSNAG_PROJECT_ID=
     BUGSNAG_API_TOKEN=
+
+
+### Component: Zoho CRM events and potentials
+
+Visit their API docs and learn how to get your Access Token. Then add `ZOHO_TOKEN` to `.env` file.
+
+We have 4 different events. Fell free to change them, since every sales organisation has different needs. 
+
+    <zoho-summary-events grid="a1:a2"></zoho-summary-events>
+    <zoho-newest-events grid="b1:b2"></zoho-newest-events>
+    <zoho-latest-potentials grid="c1:c2"></zoho-latest-potentials>
+    <zoho-won-potentials grid="d1:d2"></zoho-won-potentials>
+
 
 ## License
 

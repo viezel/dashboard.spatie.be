@@ -5,7 +5,7 @@
            <ul class="gitlab__builds">
                <li v-for="build in builds"  class="gitlab__build">
                    <h4 class="gitlab__build__title"><span class="gitlab__build__status" v-bind:class="[build.status]"></span> {{ build.project_name }}</h4>
-                   <div class="gitlab__build__data"><small>By:</small> {{ build.user }} | <small>Cov:</small> {{ build.coverage }}%</div>
+                   <div class="gitlab__build__data"><small>By:</small> {{ build.user }} <span v-if="build.coverage > 0">| <small>Cov:</small> {{ build.coverage }}%</span></div>
                </li>
            </ul>
        </section>

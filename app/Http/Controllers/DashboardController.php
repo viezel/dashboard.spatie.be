@@ -17,4 +17,16 @@ class DashboardController extends Controller
 
         return view('dashboard')->with(compact('pusherKey', 'pusherCluster', 'initialTweets', 'usingNodeServer'));
     }
+
+    public function sales()
+    {
+        $pusherKey = config('broadcasting.connections.pusher.key');
+        $pusherCluster = config('broadcasting.connections.pusher.options.cluster');
+
+        $initialTweets = (new TweetHistory())->getTweets();
+
+        $usingNodeServer = usingNodeServer();
+
+        return view('sales-dashboard')->with(compact('pusherKey', 'pusherCluster', 'initialTweets', 'usingNodeServer'));
+    }
 }

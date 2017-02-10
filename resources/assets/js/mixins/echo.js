@@ -6,6 +6,10 @@ export default {
             this.$root.echo
                 .private('dashboard')
                 .listen(`.App.Events.${eventName}`, eventName => handler(eventName));
+
+            this.$root.echo
+                .private('sales-dashboard')
+                .listen(`.App.Events.${eventName}`, eventName => handler(eventName));
         });
     },
 };

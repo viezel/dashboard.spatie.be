@@ -21,10 +21,13 @@ class Kernel extends ConsoleKernel
         \App\Components\RainForecast\FetchRainForecast::class,
         \App\Components\Twitter\ListenForMentions::class,
         \App\Components\Relic\FetchNewRelicServerList::class,
+        \App\Components\Relic\FetchNewRelicRPM::class,
         \App\Components\GitLab\FetchGitLabBuilds::class,
         \App\Components\Wunderlist\FetchWunderlistTasks::class,
         \App\Components\Bugsnag\FetchBugsnagErrors::class,
-        //SendFakeTweet::class
+        \App\Components\Zoho\FetchZohoEvents::class,
+        \App\Components\Zoho\FetchZohoLatestPotentials::class,
+        \App\Components\Zoho\FetchZohoWonPotentials::class,
     ];
 
     /**
