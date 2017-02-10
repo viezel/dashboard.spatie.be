@@ -12,9 +12,15 @@ import PackagistStatistics from './components/PackagistStatistics';
 import RainForecast from './components/RainForecast';
 import Twitter from './components/Twitter';
 import NewRelicServer from './components/NewRelicServer';
+import NewRelicRpm from './components/NewRelicRpm';
 import GitLabBuilds from './components/GitLabBuilds';
 import WunderlistTasks from './components/WunderlistTasks';
 import BugsnagErrors from './components/BugsnagErrors';
+import ZohoLatestPotentials from './components/ZohoLatestPotentials';
+import ZohoWonPotentials from './components/ZohoWonPotentials';
+import ZohoNewestEvents from './components/ZohoNewestEvents';
+import ZohoSummaryEvents from './components/ZohoSummaryEvents';
+import LaravelNews from './components/LaravelNews';
 
 new Vue({
 
@@ -30,9 +36,15 @@ new Vue({
         RainForecast,
         Twitter,
         NewRelicServer,
+        NewRelicRpm,
         GitLabBuilds,
         WunderlistTasks,
         BugsnagErrors,
+        ZohoLatestPotentials,
+        ZohoWonPotentials,
+        ZohoNewestEvents,
+        ZohoSummaryEvents,
+        LaravelNews,
     },
 
     created() {

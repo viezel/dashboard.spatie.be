@@ -12,12 +12,12 @@
         <github-file file-name="rogier" grid="c2"></github-file>
         <internet-connection grid="c3"></internet-connection>
         <new-relic-server grid="d1:d3"></new-relic-server>
-        <last-fm grid="e3"></last-fm>
         <current-time grid="e1" dateformat="ddd DD/MM"></current-time>
         <packagist-statistics grid="e2"></packagist-statistics>
         <wunderlist-tasks grid="f1:f2"></wunderlist-tasks>
 
         <bugsnag-errors grid="a4:c4"></bugsnag-errors>
+        <laravel-news grid="e3"></laravel-news>
     </div>
 
 @endsection

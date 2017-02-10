@@ -17,6 +17,7 @@ This shows how to use two dashboards at the same time.
 * Wunderlist Tasks
 * Bugsnag Errors
 * Zoho CRM events and potentials
+* Laravel News feed
 
 
 ### Component: New Relic Server list
